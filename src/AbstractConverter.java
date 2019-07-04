@@ -6,7 +6,7 @@ public interface AbstractConverter <T,E> {
       return mapper.map(dto, entityClass);
     }
 
-    default T convertToDTO (T entity, Class<T>dtoClass){
+    default T convertToDTO (E entity, Class<T>dtoClass){
       DozerBeanMapper mapper = new DozenBeanMapper();
       return mapper.map(entity, dtoClass);
     }
